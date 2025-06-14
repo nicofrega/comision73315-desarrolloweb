@@ -17,35 +17,32 @@ body {
 }
 
 header{
-    background-color: gray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: black;
+        
 }
 
-header nav ul{
-    list-style: none;
-    display: flex;
-
-}
-
-header nav ul li a{
-    text-decoration: none;
-    color: white;
-    margin: 10px;
-    
+.bg-black-transparent {
+    background-color: rgba(0, 0, 0, 0.90); /* Ajusta la opacidad del navbar */
 }
 
 
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #dca600 !important;
+}
 
 
 /*----MAIN INDEX----*/
 
 body{
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(255, 255, 255);
 }
 
-.banner {
+.banner {    
+    margin-top: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +51,6 @@ body{
     background-image: url(../img/baner.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    /*- background-attachment: fixed; -*/
     height: 550px;
     
 }
@@ -63,6 +59,7 @@ body{
 .banner h1{
     margin: 25px;
     font-size: 90px;
+    color: black;
 
 }
 
@@ -71,6 +68,7 @@ body{
     font-size: 20px;
     text-align: center;
     width: 650px;   
+    color: black;
     
 }
 
@@ -108,11 +106,35 @@ body{
     
 }
 
-.productos a img{
+.productos img{
     width: 400px;
     height: 500px;
+    object-fit: cover;
 }
 
+
+
+.boton {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 15px; 
+    border-radius: 5px; 
+}
+
+.boton:hover { /* Cambia el color de fondo al pasar el cursor */
+    color: #dca600; 
+}
+
+.boton:active {
+    background-color: #666666; 
+    transform: translateY(2px); /* Efecto de hundimiento al hacer clic */
+}
 
 .productos h2{
     font-size: 25px;
@@ -225,7 +247,7 @@ body{
 
 footer {
     padding: 20px;
-    background-color: grey;
+    background-color: black;
     color: white;
     
     
