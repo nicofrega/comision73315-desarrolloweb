@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-black-transparent fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg bg-black-transparent">
             <div class="container-fluid">
                 <a class="navbar-brand me-auto" href="./index.html"><img src="./img/logo.png" alt="Logo" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,18 +39,56 @@
         </nav>      
     </header>
     <main>
-        <section class="banner"><!--Video o imagen de presentación-->
+        <section class="banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-texto fade-in-banner">
+                <h1>WAKEBOARD</h1>
+                <p>El wakeboard ofrece un estilo de vida inigualable, ya sea que estés mejorando tus habilidades para alcanzar nuevas metas o simplemente disfrutando de un cálido día en el lago.</p>
+            </div>
+        </section>
+
+        
+
+        <!-- <section class="banner">
             <h1>WAKEBOARD</h1>
             <p>El wakeboard ofrece un estilo de vida inigualable, ya sea que estés mejorando tus habilidades para alcanzar nuevas metas o simplemente disfrutando de un cálido día en el lago.</p>
-        </section>
-        <div class="separador"></div>
-        <section class="video">
+        </section>-->
+        
+        <!--<div class="separador"></div>-->
+        <!-- <section class="video">
             <p>Andar en un cable park de wakeboard es mucho más que deslizarse sobre el agua, es una experiencia que te atrapa desde el primer momento. 
                 <br>Remolcado por un sistema de cables, combinás velocidad, equilibrio y creatividad para superar obstáculos y hacer trucos. 
                 <br>Es una actividad que apasiona, que despierta emociones intensas y crea una comunidad de riders que comparten la misma energía y amor por el deporte.
             </p>
             <iframe width="850" height="450" src="https://www.youtube.com/embed/tFi88bw-poc?si=ATGHZk0o6VrsPVaS&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section> -->
+        <section class="separador-video">
+            <h2 class="titulo-animado">EXPERIENCIA WAKEBOARD</h2>
+            <div class="linea-animada"></div>
         </section>
+
+        <section class="video-section">
+            <div class="video-content">
+                <p>
+                Andar en un cable park de wakeboard es mucho más que deslizarse sobre el agua, es una experiencia que te atrapa desde el primer momento.
+                <br><br>
+                Remolcado por un sistema de cables, combinás velocidad, equilibrio y creatividad para superar obstáculos y hacer trucos.
+                <br><br>
+                Es una actividad que apasiona, que despierta emociones intensas y crea una comunidad de riders que comparten la misma energía y amor por el deporte.
+                </p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/tFi88bw-poc?si=ATGHZk0o6VrsPVaS&amp;start=3" 
+                    title="YouTube video player"
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+                </div>
+            </div>
+        </section>
+
         <div class="separador"></div>
         <section class="productos"><!--Secciones de productos-->
             <div>
@@ -69,15 +107,48 @@
                 <img src="./img/botas.jpg" alt="botas">
                 <a href="./pages/botas.html"><button class="boton">BOTAS</button></a>
             </div>
+        </section>   
+        <section class="bg-transparente">
+            <div class="bg-texto">
+                <h2>Deslizate con estilo</h2>
+                <p>Explorá nuestra colección de wakeboards, botas y accesorios diseñados para riders que buscan más que solo rendimiento.</p>
+            </div>
         </section>
+
     </main>
-    <footer><!--Pie de pagina-->
-        <ul>
-            <li><a href="https://www.youtube.com" target="_blank">Youtube</a></li>
-            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-        </ul>
-    </footer>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="./img/logo.png" alt="Logo Wakeboard">
+            <p>Vivi el estilo de vida wake.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Enlaces</h4>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./pages/tablas.html">Tablas</a></li>
+                <li><a href="./pages/chalecos.html">Chalecos</a></li>
+                <li><a href="./pages/cascos.html">Cascos</a></li>
+                <li><a href="./pages/botas.html">Botas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h4>Redes</h4>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.youtube.com" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Wakeboard Argentina. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>

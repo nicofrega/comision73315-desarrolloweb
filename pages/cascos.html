@@ -38,6 +38,44 @@
             </div>
         </nav>
     </header>
+    <main>
+        <section class="banerc">
+            <div class="banerc-texto">
+            <h2>Protección, estilo y confianza en el agua</h2>
+            <p>Descubre nuestros cascos de wakeboard certificados y con diseño profesional.</p>
+            <a href="#caracteristicas" class="cta-btn">Ver modelos</a>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="caracteristicas-section">
+            <h2>Cascos destacados</h2>
+            <div class="grid-cascos">
+                <div class="tarjetas">
+                    <img src="../img/relleno casco.jpg" alt="Casco con espuma EVA">
+                    <h3>Espuma EVA</h3>
+                    <p>Alta absorción de impactos, ideal para parques de wakeboard y módulos.</p>
+                </div>
+                <div class="tarjetas">
+                    <img src="../img/ajuste casco.jpg" alt="Casco con diseño moderno">
+                    <h3>Diseño ergonómico</h3>
+                    <p>Ajuste perfecto y ventilación optimizada para largas sesiones en el agua.</p>
+                </div>
+                <div class="tarjetas">
+                    <img src="../img/proteccion casco.jpg" alt="Casco con protección auditiva">
+                    <h3>Protección auditiva</h3>
+                    <p>Algunos modelos incluyen cubre orejas desmontables para mayor seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="elige" class="info-section">
+            <div class="info-text">
+                <h2>¿Cómo elegir tu casco?</h2>
+                <p>Elegir un buen casco es fundamental. Buscá un modelo con certificación CE, ajuste cómodo, materiales de calidad y características específicas como flotabilidad, ventilación y espuma EVA interior. Pensá también en el tipo de uso: ¿cable park o barco?</p>
+            </div>
+        </section> 
+    </main>
+    
     <footer>
         <ul>
             <li><a href="https://www.youtube.com" target="_blank">Youtube</a></li>
@@ -46,6 +84,16 @@
         </ul>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
     
 </body>
 </html>
