@@ -1,0 +1,33 @@
+//* VARIABLES
+$color-principal: black ;
+$color-secundario: white;
+$color-terciario: #dca600;
+
+//* LISTAS
+$font-size:
+4rem, /*64px*/
+2.5rem, /*40px*/
+2.25rem, /*36px*/
+1.2rem, /*19.2px*/
+1.125rem, /*18px*/
+1rem, /*16px*/
+0.9375rem, /*15px*/
+1.5rem; 
+
+//* EXTEND
+%recomendador {
+    padding: 10px;
+    font-size: nth($font-size, 6);
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+//* MIXIN
+@mixin flex($flex, $justify, $align) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+}

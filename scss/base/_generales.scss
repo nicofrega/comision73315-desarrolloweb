@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Urbanist", sans-serif;
+    padding-top: 75px;
+    background-color: rgb(255, 255, 255);
+}
+
+.separador {
+    margin: 50px;
+    height: 1px;
+    width: 25%;
+    margin-right: 37.5%;
+    margin-left: 37.5%;
+    background-color: black;
+}
+
+.pie-transparente {
+    position: relative;
+    background: url('../img/pie-pagina.jpg') no-repeat center center/cover;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.985) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 100%);
+        z-index: 1;
+    }
+}
+
+.pie-texto {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 20px;
+    h3 {
+        font-size: 2.2rem;
+        color: black;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+        animation: fadeTrack 1.3s ease-out both;
+    }
+    p {
+        font-size: 1.125rem;
+        color: #444;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+}
+
+@keyframes fadeTrack {
+    0% {
+        opacity: 0;
+        letter-spacing: 6px;
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: normal;
+    }
+}

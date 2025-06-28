@@ -1,0 +1,622 @@
+/* INICIO */
+
+.banner {
+    position: relative;
+    background-image: url('../img/baner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    @include flex (flex, center, center);
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 2;
+    color: $color-secundario;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 50px;
+        h1 {
+            font-size: nth($font-size, 1);
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+        p {
+            font-size: nth($font-size, 4);
+            line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+}
+
+.fade-in-banner {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.separador-video {
+    text-align: center;
+    margin: 80px auto 40px;
+    h2 {
+        font-size: nth($font-size, 3);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: $color-principal;
+        margin-bottom: 20px;
+        position: relative;
+        animation: fadeInDown 1s ease-out;
+    }
+}
+
+.linea-animada {
+    width: 120px;
+    height: 4px;
+    margin: 0 auto;
+    background: $color-terciario;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: $color-principal;
+        animation: lineaSlide 2s infinite;
+        }
+}
+
+@keyframes lineaSlide {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-section {
+    @include flex (flex, center, center);
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.video-content {
+    margin-right: 50px;
+    flex: 1 1 400px;
+    max-width: 600px;
+    font-size: nth($font-size, 5);
+    line-height: 2;
+    color: $color-principal;
+    text-align: justify;    
+    padding: 10px 20px;
+    p {
+        margin-bottom: 1.2rem;
+    }    
+}
+
+.video-container {
+    flex: 1 1 500px;
+    max-width: 700px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 40px 20px;
+    div {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        &:hover {
+            .boton {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }    
+}
+
+.boton {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.7);
+    color: $color-secundario;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+    &:hover {
+        color: $color-terciario;
+    }
+}
+
+/* TABLAS */
+
+.banner-tabla {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.932); 
+    color: #fff;
+    height: 750px;
+}
+
+.banner-text {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 5px solid $color-terciario;
+    h1 {
+        font-size: nth($font-size, 3);
+        margin-bottom: 25px;
+        color: $color-terciario;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: fadeInUp 1s ease-out forwards;
+        &:hover {
+            text-shadow: 0 0 10px $color-terciario, 0 0 20px $color-terciario;
+            transition: text-shadow 0.4s ease;
+        }
+    }
+    p {
+        font-size: nth($font-size, 5);
+        line-height: 1.7;
+        color: $color-secundario;
+        max-width: 600px;
+    }    
+}
+
+.banner-image {
+    flex: 1;
+    background: url('../img/banertabla.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.seccion-comparativa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.tabla-info {
+    background-color: $color-secundario;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 500px;
+    flex: 1;
+    padding: 20px;
+    img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 15px;
+    }
+    h2 {
+        font-size: nth($font-size,8);
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: nth($font-size, 6);
+        line-height: 1.5;
+    }
+}
+
+.recomendador {
+    background-color: $color-secundario;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    h3{
+        text-align: center;
+    }
+    button {
+        background-color: $color-principal;
+        color: $color-secundario;
+        border: none;
+        cursor: pointer;
+        margin-top: 15px;
+        &:hover {
+            color: $color-terciario;
+        }
+    }
+}
+
+.recomendador input {
+    @extend %recomendador;
+} 
+
+.recomendador select {
+    @extend %recomendador;
+}
+
+.recomendador button {
+    @extend %recomendador;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: nth($font-size, 5);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-css {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-css.delay-1 {
+    animation-delay: 0.5s;
+}
+.fade-in-css.delay-2 {
+    animation-delay: 0.7s;
+}
+.fade-in-css.delay-3 {
+    animation-delay: 0.9s;
+}
+
+/* CHALECOS */
+
+.intchalecos {
+    height: 500px;
+    @include flex (flex, center, center);
+    flex-direction: column;
+    text-align: center;
+    h1 {
+        font-size: nth($font-size, 1);
+        width: 950px;
+        margin: 50px; 
+        color: $color-terciario;
+        font-weight: 600;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.233); 
+    }
+    p {
+        margin: 1.2rem;
+        font-size: nth($font-size, 4);
+        width: 800px; 
+    }
+}
+
+.grid-chalecos {
+    margin: 50px;
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 400px;
+    gap: 10px;    
+    text-align: center;
+    div {
+        img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+        }
+    }    
+}
+
+.img-cga {
+    grid-row: span 2;
+}
+
+.img-imp {
+    grid-row: span 2;
+}
+
+.txt-imp {
+    padding-top: 30px;
+    h2 {
+        padding-bottom: 35px;
+        font-size: nth($font-size, 3);
+        color: $color-principal;
+    }
+    p {
+        font-size: nth($font-size, 7);
+        color: $color-principal;
+    }
+}
+
+.txt-cga {
+    h2 {
+        padding-bottom: 2.25rem;
+        font-size: nth($font-size, 2);
+        color: $color-principal;
+    }
+    p {
+        font-size:  nth($font-size, 7);
+        color: $color-principal;
+    }
+}
+
+/* CASCOS */
+
+.banerc {
+    background: url('../img/baner-casco.jpg') no-repeat center center/cover;
+    height: 80vh;
+    @include flex (flex, center, center);
+    text-align: center;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.banerc-texto {
+    position: relative;
+    color: $color-secundario;
+    max-width: 600px;
+    z-index: 1;
+    h1 {
+        font-size:  nth($font-size, 2);
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+}
+
+.cta-btn {
+    background-color: $color-principal;
+    color: $color-secundario;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+    &:hover {
+        color: $color-terciario;
+    }
+}
+
+.caracteristicas-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    h2 {
+        color: $color-terciario;
+        margin-bottom: 2rem;
+        font-size: nth($font-size, 3);
+    }    
+}
+
+.grid-cascos {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.tarjetas {
+    margin: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    h3 {
+        margin: 1rem 0 0.5rem;
+        color: $color-terciario;
+        font-size:  nth($font-size, 8);
+    }
+    p {
+        padding: 0 1rem 1rem;
+        font-size:  nth($font-size, 7);
+        color: $color-principal;
+    }
+    img {
+        width: 100%;
+        height: 550px; 
+        object-fit: cover; 
+    }
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BOTAS */
+
+.banner-botas {
+    @include flex (flex, center, center);    
+    flex-direction: column;    
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #1a1a1a;
+    background-image: url(../img/baner-botas.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('../img/baner-botas.jpg') no-repeat center center/cover;
+    max-width: 100%;
+    height: 500px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.botas-txt {
+    max-width: 600px;
+    animation: fadeIn 2s ease-in-out;
+    h1 {
+        font-size:  nth($font-size, 2);
+        margin-bottom: 1rem;
+        color: $color-terciario; 
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); 
+    }
+    p {
+        color: $color-secundario;
+        font-size:  nth($font-size, 5);
+        line-height: 1.6;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.botas-section {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem 1.5rem;
+    background-color: $color-secundario;
+    align-items: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-block {
+    flex: 1 1 300px;
+    padding: 1rem;
+    h2 {
+        color: $color-terciario;
+        margin-bottom: 0.5rem;
+        font-size:  nth($font-size, 3);
+    }
+    p{
+        color: $color-principal;
+        font-size:  nth($font-size, 6);
+    }
+}
+
+.img-block {
+    flex: 1 1 300px;
+    padding: 1rem;
+    img {
+        width: 100%;
+        max-width: 500px; 
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
